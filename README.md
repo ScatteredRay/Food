@@ -11,6 +11,6 @@ Recipes:
 [Bear's Brioche]({% link _recipes/BearsBrioche.md %})
 
 {% for recipe in site.recipes %}
-   [recipe.Title]({% recipe.url %})
+   [{% recipe.Title %}]({% recipe.url %})
 {% endfor %}
 
