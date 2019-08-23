@@ -3,3 +3,18 @@ theme: jekyll-theme-slate
 collections:
   recipes:
     output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      read_time: true
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      layout: post
+      read_time: true
