@@ -1,5 +1,5 @@
 ---
-title: Gluten Free Brioche
+Title: "Gluten Free Brioche"
 ---
 
 Gluten Free Brioche
