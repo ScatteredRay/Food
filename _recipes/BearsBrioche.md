@@ -1,3 +1,7 @@
+---
+title: Gluten Free Brioche
+---
+
 Gluten Free Brioche
 
     1070g "Cup For Cup" Flour
@@ -16,5 +20,5 @@ Gluten Free Brioche
     Portion into pans at 325g each
     Proof until done
     Bake at 325 until done (about 17 minutes)
-    
+
     Credit: Kim Conroy
