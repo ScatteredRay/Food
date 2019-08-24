@@ -1,5 +1,5 @@
 ---
-Title: Recipes
+Title: Indy's Recipes and related food stuff.
 ---
 
 Food and recipes!
