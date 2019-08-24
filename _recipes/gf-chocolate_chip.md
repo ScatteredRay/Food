@@ -1,3 +1,6 @@
+---
+Title: "Gluten Free Chocolate Chip Cookies"
+---
 Gluten Free Chocolate Chip Cookies
 ==================================
 

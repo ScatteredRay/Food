@@ -1,3 +1,6 @@
+---
+Title: "Tim's Chocolate Chip Cookies"
+---
 In my last year of college I made the decision to move to California
 and seek my fortune as a programmer. The worry that I wouldn't be able
 to make friends was a source of stress at the time, so I set about

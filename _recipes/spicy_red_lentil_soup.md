@@ -1,3 +1,6 @@
+---
+Title: "Spicy Red Lentil Soup"
+---
 Spicy Red Lentil Soup
 =====================
 

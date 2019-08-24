@@ -1,3 +1,6 @@
+---
+Title: "Chicken Tajine courtsey of Lex Chesler"
+---
 Chicken Tajine courtsey of Lex Chesler
 ======================================
 

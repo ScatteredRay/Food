@@ -1,3 +1,6 @@
+---
+Title: "Tomato Basil Soup"
+---
 Tomato Basil Soup
 =====================
 

@@ -7,14 +7,20 @@ collections:
 
 defaults:
   - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+      read_time: true
+  - scope:
       path: "_posts"
       type: posts
     values:
-      layout: post
+      layout: default
       read_time: true
   - scope:
       path: "_recipes"
       type: recipes
     values:
-      layout: post
+      layout: default
       read_time: true

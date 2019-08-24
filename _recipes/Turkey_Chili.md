@@ -1,3 +1,6 @@
+---
+Title: "Turkey Chili"
+---
 Turkey Chili
 
 1 lb ground turkey

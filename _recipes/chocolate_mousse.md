@@ -1,4 +1,6 @@
-Chocolate Mousse
+---
+Title: "Chocolate Mousse"
+---
 ================
 
 Melt in Double Boiler
