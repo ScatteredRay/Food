@@ -9,6 +9,7 @@ Mix
 250 G milk
 100 g Sugar
 5 egg yolk
+2 tbsp rum
 
 Add:
 250 G cream
