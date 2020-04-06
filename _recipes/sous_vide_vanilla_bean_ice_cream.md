@@ -5,7 +5,8 @@ Title: "Sous Vide Vanilla Bean Ice Cream"
 Yields 700 ml
 
 Mix
-1 scrapped vanilla bean sead
+1 scrapped vanilla bean seed
+1 tsp vanilla extract
 250 G milk
 100 g Sugar
 5 egg yolk
