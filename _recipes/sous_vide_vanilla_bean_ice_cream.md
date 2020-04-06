@@ -16,7 +16,8 @@ Add:
 * 250 G cream
 
 Sous vide at:
-* 82° C for 1 hour. Agitate every 20 mins. 
+* 75° C for 1 hour. Agitate every 10 mins.
+* (65° - 85°) hotter is eggier and a bit creamier. 
 
 Chill for 8 hours
 
