@@ -5,18 +5,18 @@ Title: "Sous Vide Vanilla Bean Ice Cream"
 Yields 700 ml
 
 Mix
-1 scrapped vanilla bean seed
-1 tsp vanilla extract
-250 G milk
-100 g Sugar
-5 egg yolk
-2 tbsp rum
+* 1 scrapped vanilla bean seed
+* 1 tsp vanilla extract
+* 250 G milk
+* 100 g Sugar
+* 5 egg yolk
+* 2 tbsp rum
 
 Add:
-250 G cream
+* 250 G cream
 
 Sous vide at:
-82° C for 1 hour. Agitate every 20 mins. 
+* 82° C for 1 hour. Agitate every 20 mins. 
 
 Chill for 8 hours
 
