@@ -1,4 +1,11 @@
 baseURL = 'https://snapecast.com/'
 languageCode = 'en-us'
 title = 'Snapecast'
+theme = 'paperesque'
 uglyURLs = true
+
+[params]
+
+    [[params.topmenu]]
+    name = "About"
+    url = "/about.html"
