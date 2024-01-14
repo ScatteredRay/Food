@@ -6,9 +6,9 @@ Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
 $Credential = Get-AWSCredential -ProfileName $env:AWS_PROFILE
 $Region = $env:AWS_REGION
 
-$StackName = "DocsSiteCFNStack"
-$Domain = "docssite.nd.gl"
-$DocsBucket = "docssite-document-bucket"
+$StackName = "SnapecastCFNStack"
+$Domain = "snapecast.com"
+$DocsBucket = "snapecast-document-bucket"
 
 $AcmArn = Get-ACMCertificate -ProfileName $env:AWS_PROFILE -Domain $Domain
 
