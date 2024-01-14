@@ -1,0 +1,4 @@
+baseURL = 'https://snapecast.com/'
+languageCode = 'en-us'
+title = 'Snapecast'
+uglyURLs = true
