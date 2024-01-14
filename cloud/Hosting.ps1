@@ -6,8 +6,9 @@ Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
 $Credential = Get-AWSCredential -ProfileName $env:AWS_PROFILE
 $Region = $env:AWS_REGION
 
-$StackName = "RachaelIPCFNStack"
-$Domain = "rachaelip.com"
+$StackName = "DocsSiteCFNStack"
+$Domain = "docssite.nd.gl"
+$DocsBucket = "docssite-document-bucket"
 
 $AcmArn = Get-ACMCertificate -ProfileName $env:AWS_PROFILE -Domain $Domain
 
@@ -17,6 +18,12 @@ $AWSTemplate = @{
     Parameters = @{
     }
     Resources = @{
+        UploadBucket = @{
+            Type = "AWS::S3::Bucket"
+            Properties = @{
+                BucketName = $DocsBucket
+            }
+        }
         WebBucket = @{
             Type = "AWS::S3::Bucket"
             Properties = @{
