@@ -27,18 +27,37 @@ Function Confirm-AWSIdentity {
     if([string]::IsNullOrEmpty($Region)) {
         throw "`$env:AWS_REGION is empty, perhaps aws environment is not set correctly."
     }
-    $Account = (Get-STSCallerIdentity -Credential $Credential).Account
+    $Account = (Get-STSCallerIdentity -Credential $Credential -Region $Region).Account
     if($Config.AWSAccount -ne $Account) {
-        throw "Calling with incorrect AWSIdentity, expecting $($Config.AWSAccount)."
+        throw "Calling with incorrect AWSIdentity, expecting $($Config.AWSAccount), got $Account."
     }
     if($Config.AWSRegion -ne $Region) {
-        throw "Calling with incorrect AWS Region, expecting $($Config.AWSRegion)."
+        throw "Calling with incorrect AWS Region, expecting $($Config.AWSRegion), got $Region."
     }
 }
 
 Function Get-AWSCredentialAndRegion {
-    $Credential = Get-AWSCredential -ProfileName $env:AWS_PROFILE
-    $Region = $env:AWS_REGION
+    if([string]::IsNullOrEmpty($env:AWS_PROFILE)) {
+        $Credential = [Amazon.Runtime.BasicAWSCredentials]::new($env:AWS_ACCESS_KEY_ID, $env:AWS_SECRET_ACCESS_KEY)
+    }
+    else {
+        $Credential = Get-AWSCredential -ProfileName $env:AWS_PROFILE
+    }
+
+    if(![string]::IsNullOrEmpty($env:AWS_REGION)) {
+        $Region = $env:AWS_REGION
+    }
+    else {
+        $Region = $env:AWS_DEFAULT_REGION
+    }
+
+    if(!$Credential) {
+        Write-Error "No valid AWS Credential"
+    }
+
+    if([string]::IsNullOrEmpty($Region)) {
+        Write-Error "No valid Region set."
+    }
 
     [void](Confirm-AWSIdentity -Credential $Credential -Region $Region)
 
@@ -222,17 +241,17 @@ Function Get-ACMCertificate {
     Param(
         [Parameter(Mandatory=$True)]
         [ValidateNotNullOrEmpty()]
-        $ProfileName,
+        $Credential,
         [Parameter(Mandatory=$True)]
         [ValidateNotNullOrEmpty()]
         $Domain
     )
 
-    $AcmArn = (Get-ACMCertificateList -ProfileName $env:AWS_PROFILE -Region 'us-east-1' | where -Property DomainName -EQ $Domain).CertificateArn | Select-Object -First 1
+    $AcmArn = (Get-ACMCertificateList -Credential $Credential -Region 'us-east-1' | where -Property DomainName -EQ $Domain).CertificateArn | Select-Object -First 1
 
     if($AcmArn -eq $Null) {
         # Cert has to be in us-east-1 for cloudfront
-        $AcmArn = New-ACMCertificate -ProfileName $env:AWS_PROFILE -Region 'us-east-1' -DomainName $Domain -ValidationMethod DNS
+        $AcmArn = New-ACMCertificate -Credential $Credential -Region 'us-east-1' -DomainName $Domain -ValidationMethod DNS
         Write-Host "Need to manually verify ACM cert for now. https://console.aws.amazon.com/acm/home?region=us-east-1#/"
     }
 

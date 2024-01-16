@@ -3,14 +3,16 @@ Import-Module -Force (Join-Path $PSScriptRoot 'CFN.psm1')
 Import-Module -Force (Join-Path $PSScriptRoot 'CloudFront.psm1')
 Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
 
-$Credential = Get-AWSCredential -ProfileName $env:AWS_PROFILE
-$Region = $env:AWS_REGION
+$Credential, $Region = Get-AWSCredentialAndRegion
 
 $StackName = "SnapecastCFNStack"
 $Domain = "snapecast.com"
 $DocsBucket = "snapecast-document-bucket"
+$DomainBucketName = $Domain
+$DomainBucketName = "snapecastdotcom"
+$BucketUserName = "snapecast-WebBucketAccessUser"
 
-$AcmArn = Get-ACMCertificate -ProfileName $env:AWS_PROFILE -Domain $Domain
+$AcmArn = Get-ACMCertificate -Credential $Credential -Domain $Domain
 
 $AWSTemplate = @{
     AWSTemplateFormatVersion = "2010-09-09"
@@ -27,7 +29,7 @@ $AWSTemplate = @{
         WebBucket = @{
             Type = "AWS::S3::Bucket"
             Properties = @{
-                BucketName = $Domain
+                BucketName = $DomainBucketName
             }
         }
         HostedZone = @{
@@ -39,7 +41,7 @@ $AWSTemplate = @{
         WebUser = @{
             Type = "AWS::IAM::User"
             Properties = @{
-                UserName = "WebBucketAccessUser"
+                UserName = $BucketUserName
                 Policies = @(
                     @{
                         PolicyName = "WebBucketPolicy"
@@ -73,5 +75,5 @@ $CFDist = New-CloudFrontDist -BucketRef "WebBucket" -Domain $Domain -DomainZoneI
 
 $AWSTemplate = Merge-AWSTemplates $AWSTemplate $CFDist
 
-Invoke-CFNUpdate -AWSTemplate $AWSTemplate -StackName $StackName -AWSProfile $env:AWS_PROFILE -AWSRegion $Region -IAMCapability
+Invoke-CFNUpdate -AWSTemplate $AWSTemplate -StackName $StackName -Credential $Credential -AWSRegion $Region -IAMCapability
 

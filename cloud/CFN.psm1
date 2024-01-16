@@ -73,7 +73,7 @@ Function Invoke-CFNUpdate {
     Param(
         $AWSTemplate,
         $StackName,
-        $AWSProfile,
+        $Credential,
         $AWSRegion,
         [switch]$IAMCapability,
         [switch]$UseEnhancedDeploy
@@ -83,11 +83,17 @@ Function Invoke-CFNUpdate {
     $AWSTemplateFile = (Join-Path $CloudBuildRoot "$StackName.template")
     Set-Content -Path $AWSTemplateFile -Value $AWSTemplateJson -Force
 
+
+    # Do not love setting these here, since they don't dissapear nicely, but the aws cli doesn't seem to accept them on the cli.
+    # Perhaps spawn a subshell:?
+    $env:AWS_ACCESS_KEY_ID = $Credential.GetCredentials().AccessKey
+    $env:AWS_SECRET_ACCESS_KEY = $Credential.GetCredentials().SecretKey
+
     if($UseEnhancedDeploy) {
         # TODO
     }
     else {
-        Write-Host (aws --profile "$AWSProfile" cloudformation validate-template --template-body file://$AWSTemplateFile)
+        Write-Host (aws cloudformation validate-template --template-body file://$AWSTemplateFile)
         if($LastExitCode -ne 0) {
             throw "CFN Validate Error"
         }
@@ -115,20 +121,20 @@ Function Invoke-CFNUpdate {
         # execute-change-set
         # wait change-set-create-complete
 
-        Write-Host (aws --profile "$AWSProfile" --region $AWSRegion cloudformation deploy --no-fail-on-empty-changeset --template-file $AWSTemplateFile --s3-bucket $CloudFormationTemplateBucket --s3-prefix "templates-$StackName/" --stack-name $StackName @DeployArgs)
+        Write-Host (aws --region $AWSRegion cloudformation deploy --no-fail-on-empty-changeset --template-file $AWSTemplateFile --s3-bucket $CloudFormationTemplateBucket --s3-prefix "templates-$StackName/" --stack-name $StackName @DeployArgs)
         $Success = $LastExitCode -eq 0
     }
     else {
-        Write-Host (aws --profile "$AWSProfile" --region $AWSRegion cloudformation deploy --no-fail-on-empty-changeset --template-file $AWSTemplateFile --stack-name $StackName @DeployArgs)
+        Write-Host (aws  --region $AWSRegion cloudformation deploy --no-fail-on-empty-changeset --template-file $AWSTemplateFile --stack-name $StackName @DeployArgs)
         $Success = $LastExitCode -eq 0
     }
 
     if(!$Success) {
-        Write-Host ((aws --profile "$AWSProfile" --region $AWSRegion cloudformation describe-stack-events --stack-name $StackName | ConvertFrom-Json).StackEvents | Where-Object -Property ResourceStatus -match '_FAILED' | Select -First 1)
+        Write-Host ((aws --region $AWSRegion cloudformation describe-stack-events --stack-name $StackName | ConvertFrom-Json).StackEvents | Where-Object -Property ResourceStatus -match '_FAILED' | Select -First 1)
         throw "CFN Deploy Error"
     }
 
-    $Desc = aws --profile "$AWSProfile" --region $AWSRegion cloudformation describe-stacks --stack-name $StackName | ConvertFrom-Json
+    $Desc = aws --region $AWSRegion cloudformation describe-stacks --stack-name $StackName | ConvertFrom-Json
 
     $Desc.Stacks
 }
