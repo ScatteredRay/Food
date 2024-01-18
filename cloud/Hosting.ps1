@@ -1,4 +1,5 @@
 $ErrorActionPreference = "Stop"
+Import-Module -Name AWSPowerShell.NetCore
 Import-Module -Force (Join-Path $PSScriptRoot 'CFN.psm1')
 Import-Module -Force (Join-Path $PSScriptRoot 'CloudFront.psm1')
 Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
@@ -10,6 +11,7 @@ $Domain = "snapecast.com"
 $DocsBucket = "snapecast-document-bucket"
 $DomainBucketName = $Domain
 $DomainBucketName = "snapecastdotcom"
+$MediaBucketName = "snapecast-media"
 $BucketUserName = "snapecast-WebBucketAccessUser"
 
 $AcmArn = Get-ACMCertificate -Credential $Credential -Domain $Domain
@@ -24,6 +26,12 @@ $AWSTemplate = @{
             Type = "AWS::S3::Bucket"
             Properties = @{
                 BucketName = $DocsBucket
+            }
+        }
+        MediaBucket = @{
+            Type = "AWS::S3::Bucket"
+            Properties = @{
+                BucketName = $MediaBucketName
             }
         }
         WebBucket = @{
@@ -59,6 +67,8 @@ $AWSTemplate = @{
                                 Resource = @(
                                     @{"Fn::GetAtt" = @( "WebBucket", "Arn" ) }
                                     @{"Fn::Join" = @( "/", @( @{"Fn::GetAtt" = @( "WebBucket", "Arn" ) }, "*" ) ) }
+                                    @{"Fn::GetAtt" = @( "MediaBucket", "Arn" ) }
+                                    @{"Fn::Join" = @( "/", @( @{"Fn::GetAtt" = @( "MediaBucket", "Arn" ) }, "*" ) ) }
                                 )
                             }
                         }
