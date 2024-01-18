@@ -3,9 +3,22 @@ languageCode = 'en-us'
 title = 'Snapecast'
 theme = 'paperesque'
 uglyURLs = true
+copyright = "Copyright (C) 2006-2012, Snapecast LLC"
 
 [params]
+    subtitle = "all Snape, all the time"
+    [[params.topmenu]]
+        name = "About"
+        url = "/about.html"
 
     [[params.topmenu]]
-    name = "About"
-    url = "/about.html"
+        name = "Announcements"
+        url = "/announcements.html"
+
+    [[params.topmenu]]
+        name = "Podcasts"
+        url = "/podcasts.html"
+
+    [[params.topmenu]]
+        name = "Polls"
+        url = "/polls.html"
