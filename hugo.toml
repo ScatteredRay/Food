@@ -1,24 +1,68 @@
 baseURL = 'https://snapecast.com/'
 languageCode = 'en-us'
 title = 'Snapecast'
-theme = 'paperesque'
+theme = 'snape'
 uglyURLs = true
-copyright = "Copyright (C) 2006-2012, Snapecast LLC"
+copyright = "Copyright © 2006-2012, Snapecast LLC"
 
 [params]
-    subtitle = "all Snape, all the time"
-    [[params.topmenu]]
-        name = "About"
-        url = "/about.html"
+subtitle = "all Snape, all the time"
+banner = "/images/selinaenriquez/SCBANNER1.jpg"
 
-    [[params.topmenu]]
-        name = "Announcements"
-        url = "/announcements.html"
+[menus]
+  [[menus.main]]
+  name = "About"
+  url = "/about.html"
+  weight = 1
 
-    [[params.topmenu]]
-        name = "Podcasts"
-        url = "/podcasts.html"
+  [[menus.main]]
+  name = "Announcements"
+  url = "/announcements.html"
+  weight = 2
 
-    [[params.topmenu]]
-        name = "Polls"
-        url = "/polls.html"
+  [[menus.main]]
+  name = "Announcements"
+  url = "/announcements.html"
+  weight = 3
+
+  [[menus.main]]
+  name = "Podcasts"
+  url = "/podcasts.html"
+  weight = 4
+
+  [[menus.main]]
+  name = "Transcripts"
+  url = "/transcripts.html"
+  weight = 5
+
+  [[menus.main]]
+  name = "Polls"
+  url = "/polls.html"
+  weight = 6
+
+  [[menus.main]]
+  name = "Headmaster Gallery"
+  url = "/headmaster-gallery.html"
+  weight = 7
+
+  [[menus.main]]
+  name = "Staff"
+  url = "/staff.html"
+  weight = 8
+
+  [[menus.main]]
+  name = "Support Snapecast"
+  url = "/support-snapecast.html"
+  weight = 9
+
+  [[menus.main]]
+  name = "Monthly Contests"
+  url = "/monthly-contest.html"
+
+  [[menus.main]]
+  name = "Contribute"
+  url = "/contribute.html"
+
+  [[menus.main]]
+  name = "Other Podcasts"
+  url = "/other-hp-podcasts.md"
