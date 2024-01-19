@@ -65,4 +65,4 @@ banner = "/images/selinaenriquez/SCBANNER1.jpg"
 
   [[menus.main]]
   name = "Other Podcasts"
-  url = "/other-hp-podcasts.md"
+  url = "/other-hp-podcasts.html"
