@@ -7,7 +7,15 @@ copyright = "Copyright © 2006-2012, Snapecast LLC"
 
 [params]
 subtitle = "all Snape, all the time"
+summary = "all Snape, all the time"
 banner = "/images/selinaenriquez/SCBANNER1.jpg"
+podcastImage = "/images/snapecast-itunes-large.jpg"
+categories = [ "TV & Film" ]
+explicit = true
+
+[author]
+  email = "rstiegel@gmail.com"
+  name= "akemi42"
 
 [menus]
   [[menus.main]]
