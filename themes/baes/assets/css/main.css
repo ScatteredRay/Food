@@ -1,22 +1,129 @@
+:root {
+  --primary-5: #f9f6f9;
+  --primary-10: #f4eff3;
+  --primary-20: #e9e1e8;
+  --primary-30: #d9c8d6;
+  --primary-40: #c0a6bc;
+  --primary-50: #ab89a4;
+  --primary-60: #936f8a;
+  --primary-70: #815e77;
+  --primary-80: #684c5f;
+  --primary-90: #584351;
+  --primary-95: #33242e;
+
+  --secondary-5: #fcf7f0;
+  --secondary-10: #f7ecdd;
+  --secondary-20: #eed6ba;
+  --secondary-30: #e3b98c;
+  --secondary-40: #d79760;
+  --secondary-50: #cf7c40;
+  --secondary-60: #c16635;
+  --secondary-70: #a0502e;
+  --secondary-80: #81422b;
+  --secondary-90: #683726;
+  --secondary-95: #381a12;
+
+  --primary: var(--primary-70);
+  --secondary: var(--secondary-30);
+
+  --primary-text: var(--secondary-90);
+  --primary-bg: var(--primary-10);
+  --secondary-bg: #FAFAFA;
+  --primary-accent: var(--secondary-70);
+  --hover-accent: #66E;
+  --break-color: #222;
+}
+
+html {
+  background: var(--secondary-bg);
+  background: linear-gradient(45deg, var(--secondary-10) 0%, var(--secondary-5) 100%);
+}
+
 body {
-  color: #222;
+  color: var(--primary-text);
+  background: var(--primary-bg);
+  background: linear-gradient(135deg, var(--primary-10) 0%, var(--primary-20) 100%);
   font-family: sans-serif;
   line-height: 1.5;
-  margin: 1rem;
+  margin: 1em auto;
+  padding: 0.5rem;
   max-width: 768px;
-}
-
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
-}
-
-footer {
-  border-top: 1px solid #222;
-  margin-top: 1rem;
+  border: 1px solid var(--secondary-20);
 }
 
 a {
-  color: #00e;
+  color: var(--primary-accent);
   text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover-accent);
+}
+
+
+nav {
+  width: fit-content;
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+nav li, nav label {
+  color: var(--primary-accent);
+  background: var(--primary-5);
+  border: 1px solid var(--secondary-30);
+  margin: 0.1em;
+  border-radius: 1em;
+  padding: 0.4em;
+}
+
+nav li:hover a, nav label:hover a {
+  color: var(--primary-accent);
+}
+
+nav li:hover, nav label:hover {
+  background: var(--primary-10);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;
+}
+
+main img {
+  margin: auto;
+  display: block;
+}
+
+h1 {
+  margin: 0.1em;
+  text-align: center;
+}
+
+header {
+  border-bottom: 2px solid var(--secondary-30);
+  margin-bottom: 0.5em;
+  padding: 1px;
+  font-family: Cinzel Decorative;
+  text-align: center;
+  line-height: 1.25;
+  text-transform: none;
+  letter-spacing: 0em;
+}
+
+header, footer {
+  border-top: 2px solid var(--secondary-30);
+  margin-top: 0.5em;
+  padding: 1px;
+}
+
+.video-embed {
+  margin: auto;
+  display: block;
+  width: 560px;
+  height: 315px;
 }

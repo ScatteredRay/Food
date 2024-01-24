@@ -1,7 +1,10 @@
 {{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.featureImage }}
+    {{- $image := resources.GetMatch . }}
+    {{- $image = $image.Fill "512x512 smart q100"}}
+    <img src="{{ $image.RelPermalink }}"/>
+  {{- end }}
   {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
