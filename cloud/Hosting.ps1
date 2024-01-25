@@ -6,13 +6,13 @@ Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
 
 $Credential, $Region = Get-AWSCredentialAndRegion
 
-$StackName = "SnapecastCFNStack"
-$Domain = "snapecast.com"
-$DocsBucket = "snapecast-document-bucket"
-$DomainBucketName = $Domain
-$DomainBucketName = "snapecastdotcom"
-$MediaBucketName = "snapecast-media"
-$BucketUserName = "snapecast-WebBucketAccessUser"
+$Config = Get-SetupConfig
+
+$StackName = $Config.Hosting.StackName
+$Domain = $Config.Hosting.Domain
+$DomainBucketName = $Config.Hosting.HostingBucket
+$MediaBucketName = $Config.Hosting.MediaBucket
+$BucketUserName = $Config.Hosting.BucketUserName
 
 $AcmArn = Get-ACMCertificate -Credential $Credential -Domain $Domain
 
@@ -22,12 +22,6 @@ $AWSTemplate = @{
     Parameters = @{
     }
     Resources = @{
-        UploadBucket = @{
-            Type = "AWS::S3::Bucket"
-            Properties = @{
-                BucketName = $DocsBucket
-            }
-        }
         MediaBucket = @{
             Type = "AWS::S3::Bucket"
             Properties = @{

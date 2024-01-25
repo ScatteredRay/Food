@@ -4,6 +4,7 @@ title = 'Baes Love'
 theme = 'baes'
 uglyURLs = true
 copyright = "Copyright © 2024, Rachael and Indy"
+timeout = "10m"
 
 [params]
 banner = "/images/inquisitive.jpg"
@@ -27,3 +28,12 @@ banner = "/images/inquisitive.jpg"
   name = "Toast"
   url = "/toast.html"
   weight = 3
+
+[module]
+[[module.mounts]]
+  source = 'assets'
+  target = 'assets'
+
+[[module.mounts]]
+  source = 'media'
+  target = 'assets'

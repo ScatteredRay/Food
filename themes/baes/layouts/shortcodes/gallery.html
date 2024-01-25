@@ -1,0 +1,8 @@
+{{/*- $files := readDir (printf "media%s"  ) */}}
+{{- $files := resources.Match (.Get "match") }}
+<div class="gallery">
+    {{- range $files }}
+        {{- $thumb := .Fill "64x64 smart q80" }}
+        <a class="lightbox-link" href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" /></a>
+    {{- end}}
+</div>
