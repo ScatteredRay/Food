@@ -1,11 +1,12 @@
 {
     "AWSAccount" : 336561188076,
-    "AWSRegion" : "us-west-2"
+    "AWSRegion" : "us-west-2",
     "Hosting" : {
         "StackName" : "BaesDotLoveCFNStack",
         "Domain" : "baes.love",
-        "HostingBucket" : "baes.love",
-        "MediaBucket" : "baes.love-media",
-        "BucketUserName" : "baesdotlove-WebBucketAccessUser"
+        "HostingBucket" : "baesdotlove",
+        "MediaBucket" : "baesdotlove-media",
+        "BucketUserName" : "baesdotlove-WebBucketAccessUser",
+        "HostedZoneId" : "Z05255853UAT4PJ090PY8",
     }
 }

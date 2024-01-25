@@ -1,10 +1,11 @@
 $ErrorActionPreference = "Stop"
+Import-Module -Name AWSPowerShell.NetCore
 Import-Module -Force (Join-Path $PSScriptRoot 'CloudUtil.psm1')
 
 $Credential, $Region = Get-AWSCredentialAndRegion
 
-#TODO: Move to config
-$BucketUserName = "snapecast-WebBucketAccessUser"
+$Config = Get-SetupConfig
+$BucketUserName = $Config.Hosting.BucketUserName
 
 $AccessKey = New-IAMAccessKey -Credential $Credential -Region $Region -UserName $BucketUserName
 

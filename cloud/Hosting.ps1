@@ -13,6 +13,7 @@ $Domain = $Config.Hosting.Domain
 $DomainBucketName = $Config.Hosting.HostingBucket
 $MediaBucketName = $Config.Hosting.MediaBucket
 $BucketUserName = $Config.Hosting.BucketUserName
+$HostedZoneId = $Config.Hosting.HostedZoneId
 
 $AcmArn = Get-ACMCertificate -Credential $Credential -Domain $Domain
 
@@ -32,12 +33,6 @@ $AWSTemplate = @{
             Type = "AWS::S3::Bucket"
             Properties = @{
                 BucketName = $DomainBucketName
-            }
-        }
-        HostedZone = @{
-            Type = "AWS::Route53::HostedZone"
-            Properties = @{
-                Name = $Domain
             }
         }
         WebUser = @{
@@ -75,7 +70,18 @@ $AWSTemplate = @{
     }
 }
 
-$CFDist = New-CloudFrontDist -BucketRef "WebBucket" -Domain $Domain -DomainZoneId (Get-CFNRef "HostedZone") -AcmArn $AcmArn -AccessLogging
+if([string]::IsNullOrEmpty($HostedZoneId)) {
+    $AWSTemplate.Resources.HostedZone = @{
+        Type = "AWS::Route53::HostedZone"
+        Properties = @{
+            Name = $Domain
+        }
+    }
+
+    $HostedZoneId = (Get-CFNRef "HostedZone")
+}
+
+$CFDist = New-CloudFrontDist -BucketRef "WebBucket" -Domain $Domain -DomainZoneId $HostedZoneId -AcmArn $AcmArn -AccessLogging
 
 $AWSTemplate = Merge-AWSTemplates $AWSTemplate $CFDist
 
