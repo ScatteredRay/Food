@@ -25,9 +25,10 @@
 
 
 {{- $files := resources.Match (.Get "match") }}
+{{- $thumbFill := .Get "thumb" }}
 <div class="gallery">
     {{- range $files }}
-        {{- $thumb := .Fill "64x64 smart q80" }}
+        {{- $thumb := .Fill $thumbFill }}
         <a class="lightbox-link" href="{{ .RelPermalink }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" /></a>
     {{- end}}
 </div>
