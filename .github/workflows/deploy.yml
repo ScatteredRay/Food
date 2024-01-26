@@ -34,8 +34,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
-      - name: sync Media from S3
-        run: aws s3 sync s3://food.nd.gl-media ./media/ --delete
+      #- name: sync Media from S3
+      #  run: aws s3 sync s3://food.nd.gl-media ./media/ --delete
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -43,7 +43,11 @@ jobs:
         run: |
           hugo \
             --minify \
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
       #- name: sync Media from S3
       #  run: aws s3 sync s3://food.nd.gl-media s3://food.nd.gl/media --delete --copy-props none
-      - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./public/ s3://food.nd.gl --delete --exclude 'media/*'
+      #- name: Deploy static site to S3 bucket
+      #  run: aws s3 sync ./public/ s3://food.nd.gl --delete --exclude 'media/*'
