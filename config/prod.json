@@ -2,11 +2,11 @@
     "AWSAccount" : 336561188076,
     "AWSRegion" : "us-west-2",
     "Hosting" : {
-        "StackName" : "BaesDotLoveCFNStack",
-        "Domain" : "baes.love",
-        "HostingBucket" : "baesdotlove",
-        "MediaBucket" : "baesdotlove-media",
-        "BucketUserName" : "baesdotlove-WebBucketAccessUser",
-        "HostedZoneId" : "Z05255853UAT4PJ090PY8",
+        "StackName" : "FoodDotNdDotGlCFNStack",
+        "Domain" : "food2.nd.gl",
+        "HostingBucket" : "food.nd.gl",
+        "MediaBucket" : "food.nd.gl-media",
+        "BucketUserName" : "food.nd.gl-WebBucketAccessUser",
+        "HostedZoneId" : "Z32ZTTO2MKJRE3",
     }
 }
