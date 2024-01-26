@@ -1,34 +1,18 @@
-baseURL = 'https://baes.love/'
-languageCode = 'en-us'
-title = 'Rachael & Indy'
-theme = 'baes'
+baseURL = "https://food2.nd.gl/"
+languageCode = "en-us"
+title = "Indy's Foods"
+theme = "baes"
 uglyURLs = true
-copyright = "Copyright © 2024, Rachael and Indy"
+copyright = "Copyright © 2024, Indy"
 timeout = "10m"
 
 [params]
-banner = "/images/inquisitive.jpg"
 
 [params.author]
   email = "indy@ishere.com"
   name= "Indy"
 
 [menus]
-  [[menus.main]]
-  name = "Wedding Video"
-  url = "/wedding-video.html"
-  weight = 1
-
-  [[menus.main]]
-  name = "Wedding Gallery"
-  url = "/wedding-gallery.html"
-  weight = 2
-
-  [[menus.main]]
-  name = "Toast"
-  url = "/toast.html"
-  weight = 3
-
 [module]
 [[module.mounts]]
   source = 'assets'
