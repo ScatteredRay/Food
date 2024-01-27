@@ -1,7 +1,7 @@
 baseURL = "https://food2.nd.gl/"
 languageCode = "en-us"
 title = "Indy's Foods"
-theme = "baes"
+theme = "food"
 uglyURLs = true
 copyright = "Copyright © 2024, Indy"
 timeout = "10m"
@@ -13,6 +13,10 @@ timeout = "10m"
   name= "Indy"
 
 [menus]
+  [[menus.recipes]]
+  name = "Recipes"
+  url = "/recipes.html"
+
 [module]
 [[module.mounts]]
   source = 'assets'
