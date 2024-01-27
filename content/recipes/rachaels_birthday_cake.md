@@ -2,6 +2,9 @@
 title: Rachael's Birthday Paleo Chocolate Cake
 ---
 
+Rachael's favorite cake for her birthday.
+<!--more-->
+
 = Cake
 
 Oven 350
