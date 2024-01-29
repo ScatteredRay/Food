@@ -1,29 +1,29 @@
 ---
 Title: "Pad Kraprow Gai"
 ---
-Pad Kraprow Gai
+<!--more-->
 
 Mix sauce:
-Tsp Fish sauce
-Tsp Oyster sauce
-Tbsp Soy sauce
-Tbsp maple syrup
+  - *1 tsp* Fish sauce
+  - *1 tsp* Oyster sauce
+  - *1 tbsp* Soy sauce
+  - *1 tbsp* maple syrup
 
 Saute:
-Ground chicken in
-2 tbsp coconut oil
+  - Ground chicken in:
+  - *2 tbsp* coconut oil
 
-Add couple tbsp of sauce.
+Add *couple tbsp* of **sauce**.
 
 When cooked add:
-Garlic
-Habanero
-Onion
-Green pepper
+  - Garlic
+  - Habanero
+  - Onion
+  - Green pepper
 
 Saute till dry
 
-Add rest of sauce and deglaze. 
+Add rest of sauce and deglaze.
 
 When done remove from heat. Add lots of:
-Thai Basil
+  - Thai Basil

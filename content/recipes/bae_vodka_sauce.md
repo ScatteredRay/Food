@@ -1,22 +1,30 @@
 ---
-Title: "Bae Vodka Sauce"
+title: "Bae Vodka Sauce"
+date: 2020-03-18
 ---
 
-Bae Proposal Vodka Pasta Sauce 3/18/20
+Bae Proposal Vodka Pasta Sauce
+<!--more-->
 
-1 diced habanero
-Red pepper flakes
-Garlic
-All sauteed in olive oil
+ - *1* diced habanero
+ - Red pepper flakes
+ - Garlic
 
-Half diced onion
+All sauteed in
 
-3/4 diced red bell pepper
+ - olive oil
 
-1/2 beyond meat ground
+Add
 
-Tomato paste
+ - *Half* diced onion
+ - *3/4* diced red bell pepper
+ - *1/2* beyond meat ground
+ - Tomato paste
 
-Degause vodka
+Then degause with
 
-Tomato sauce
+ - vodka
+
+add
+
+ - Tomato sauce

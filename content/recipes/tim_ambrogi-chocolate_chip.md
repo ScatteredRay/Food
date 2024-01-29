@@ -1,6 +1,10 @@
 ---
 Title: "Tim's Chocolate Chip Cookies"
 ---
+
+As shared by Tim...
+<!--more-->
+
 In my last year of college I made the decision to move to California
 and seek my fortune as a programmer. The worry that I wouldn't be able
 to make friends was a source of stress at the time, so I set about
@@ -25,49 +29,28 @@ and 1.2) to polish it into the recipe we have now fallen in love with.
 It is sure to help you make friends.
 
 Ingredients:
-
-1 cup brown sugar (dark as night)
-
-0.5 cup white sugar
-
-2 sticks Challenge unsalted butter
-
-1.5 eggs (whisk two together in a bowl, but only use three-quarters of it)
-
-2 tsp vanilla extract
-
-1 tsp salt
-
-1 tsp baking soda
-
-2 cups flour
-
-1 Tbs baker's cocoa powder
-
-1 bag frozen Guittard semi-sweet chocolate chips
+ - *1 cp* brown sugar (dark as night)
+ - *1/2 cp* white sugar
+ - *2 sticks* Challenge unsalted butter
+ - *1.5 ea* eggs (whisk two together in a bowl, but only use three-quarters of it)
+ - *2 tsp* vanilla extract
+ - *1 tsp* salt
+ - *1 tsp* baking soda
+ - *2 cp* flour
+ - *1 tbs* baker's cocoa powder
+ - *1 bag* frozen Guittard semi-sweet chocolate chips
 
 Steps:
 
-Preheat oven to 350 degrees
-
-Cut chilled butter up into chunks
-
-Add sugar to butter
-
-Cream butter and sugar together with your hands until smooth and partly-melted
-
-Whisk two eggs together in a bowl and only add three-quarters of it to the mix
-
-Mix in vanilla and salt
-
-In a separate bowl, mix the baking soda, flour, and cocoa powder
-
-With a wooden spoon, add the dry ingredients to the wet ingredients
-(don't over-stir)
-
-Add the frozen chocolate chips to the batter (chilling the dough instantly)
-
-Spoon the dough in 1.5-inch-diameter chunks onto a cool, heavy-duty
+1. Preheat oven to **350°** degrees
+2. Cut chilled butter up into chunks
+3. Add sugar to butter
+4. Cream butter and sugar together with your hands until smooth and partly-melted
+5. Whisk two eggs together in a bowl and only add three-quarters of it to the mix
+6. Mix in vanilla and salt
+7. In a separate bowl, mix the baking soda, flour, and cocoa powder
+8. With a wooden spoon, add the dry ingredients to the wet ingredients (don't over-stir)
+9. Add the frozen chocolate chips to the batter (chilling the dough instantly)
+10. Spoon the dough in 1.5-inch-diameter chunks onto a cool, heavy-duty
 aluminum cookie sheet
-
-Bake for 10-15 minutes (varies by oven temperature and preferences of the baker) 
+11. Bake for **10**-**15** minutes (varies by oven temperature and preferences of the baker) 
